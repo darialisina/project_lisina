@@ -38,7 +38,7 @@ class WorkController < ApplicationController
     else
       theme = params[:theme]
       theme_m = Theme.find_by(name: theme)
-      theme_id = theme_m
+      theme_id = theme_m.id
       data = show_image(theme_id, 0)
     end
     session[:selected_theme_id] = theme_id
