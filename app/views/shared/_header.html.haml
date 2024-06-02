@@ -14,4 +14,11 @@
           = link_to image_tag("United_Kingdom.jpg", alt: "",  style: "width: 40px; height: 30px", title: "English"), locale: :en
           %b
             = I18n.locale
+      - if signed_in?
+        %li= link_to t('.profile'), current_user
+        %li
+          = link_to t('.sign_out'), signout_path, method: "delete"
+      - else
+        %li= link_to t('.sign_in'), signin_path
+        %li= link_to t('.sign_up'), signup_path
     

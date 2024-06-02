@@ -17,6 +17,7 @@ Rails.application.routes.draw do
   match 'work', to: 'work#index', via: :get
   match 'choose_theme', to: 'work#choose_theme', via: :get
   match 'display_theme', to: 'work#display_theme', via: :post
+  match 'results_list',     to: 'work#results_list', via: :get
 
   root 'work#index'
 
@@ -25,5 +26,10 @@ Rails.application.routes.draw do
     match 'prev_image',       to: 'api#prev_image',   via: 'get'
     match 'save_value',       to: 'api#save_value',   via: :get
   end
+
+  match 'signup',   to: 'users#new',            via: 'get'
+  match 'signin',   to: 'sessions#new',         via: 'get'
+  match 'signout',  to: 'sessions#destroy',     via: 'delete'
+  resources :sessions, only: [:new, :create, :destroy]
   
 end
