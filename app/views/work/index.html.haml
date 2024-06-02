@@ -15,12 +15,6 @@
           = t('.total_values')
           %h2.total{:title => "Total values"} #{@values_qty.round}
 
-      .brainlook
-        %a{:href => "http://www.brainlook.org"}
-          %img{:alt => "Share to Brainlook", :src => "assets/brainlook_logo.png", :title => "Braonlook",:style => "width:28%;" }
-          %p{:title => "Braonlook"}
-            = t('.share_opinion')
-
     .col-md-9
       .image_display
 
@@ -40,7 +34,7 @@
 
           .col-md-10
             .img-center{:title => "Default image"}
-              %img{:alt => "Default Image", :src => '/assets/pictures/bts.jpeg', :title => "Default image",:style => 'width:100%; height:100%;' }
+              %img{:alt => "Default Image", :src => '/assets/pictures/bts.jpeg', :title => "Default image",:style => 'width:50%; height:50%;' }
               .image_user_value{:title => "Expert value"}
 
           .col-md-1
@@ -58,12 +52,9 @@
               %button.button__results.save{:title => "Save image diag results"}
                 %a{"data-remote" => "true", :format => "js", :href => "#", :title => "Save image diag results"}
                   = t(".save_decision")
-
-              %p.left 5%
               #slider
                 %input#slide{:max => "100", :min => "5", :value => "50",
                              :onchange => "updateSlider(this.value)",
                              :step => "5", :type => "range"}
-              %p.right 100%
               %br
 

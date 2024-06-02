@@ -4,11 +4,11 @@ class WorkController < ApplicationController
 
   def index
     @images_count = Image.all.count
-    @selected_theme = "Select theme to leave your answer"
-    # @selected_theme = t('.def_select_theme')
-    @selected_image_name = 'BTS'
+    # @selected_theme = "Select theme to leave your answer"
+    @selected_theme = t('.def_select_theme')
+    @selected_image_name = ''
     @values_qty = Value.all.count
-    # @current_locale = I18n.locale
+    @current_locale = I18n.locale
     @themes = Theme.all.pluck(:name)
 
     session[:selected_theme_id] = @selected_theme # to display nothing

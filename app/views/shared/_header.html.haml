@@ -1,9 +1,17 @@
 %body
   %header.d-flex.justify-content-center.py-3
-    %ul.nav.nav-pills
-      %li.nav-item
-        = link_to "Главная" , main_index_path, class: "nav-link px-2 text-danger"
-      %li.nav-item
-        = link_to "О сайте" , main_about_path, class: "nav-link px-2 text-danger"
-      %li.nav-item
-        = link_to "Техподдержка" , main_help_path, class: "nav-link px-2 text-danger"
+    %nav
+      %ul.nav.nav-pills
+        %li.nav-item
+          = link_to t('.home') , main_index_path, class: "nav-link px-2 text-danger"
+        %li.nav-item
+          = link_to "О сайте" , main_about_path, class: "nav-link px-2 text-danger"
+        %li.nav-item
+          = link_to "Техподдержка" , main_help_path, class: "nav-link px-2 text-danger"
+        %p.locale
+          -#.ru_link
+          = link_to image_tag("Russia.jpg", alt: "",  style: "width: 40px; height: 30px", title: "Русский" ), locale: :ru
+          = link_to image_tag("United_Kingdom.jpg", alt: "",  style: "width: 40px; height: 30px", title: "English"), locale: :en
+          %b
+            = I18n.locale
+    
