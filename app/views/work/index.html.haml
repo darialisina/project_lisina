@@ -3,12 +3,9 @@
     .col-md-3
       .left_controls
         .select_theme
-          = render 'work/button_theme_select', locale: @current_locale
+          = render 'work/button_theme_select'
           -# = render 'work/choose_theme_from_arr', locale: @current_locale
 
-          %br
-        .modal_list_results
-          = render 'work/button_list_results'
           %br
 
         %span.common_value
@@ -43,7 +40,7 @@
 
           .col-md-10
             .img-center{:title => "Default image"}
-              %img{:alt => "Default Image", :src => 'assets/pictures/raduga5обрез.jpg', :title => "Default image",:style => 'width:100%; height:100%;' }
+              %img{:alt => "Default Image", :src => '/assets/pictures/bts.jpeg', :title => "Default image",:style => 'width:100%; height:100%;' }
               .image_user_value{:title => "Expert value"}
 
           .col-md-1
